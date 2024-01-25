@@ -42,7 +42,7 @@ for current in all_data:
         if current_naming_context:
                 # print(current_ip, current_naming_context)
                 for naming_context in current_naming_context:
-                        command = f"ldapsearch -x -H ldap://{current_ip} -b '{naming_context}'"
+                        command = f"ldapsearch -x -H ldap://{current_ip} -b '{naming_context}' -E pr=1000/noprompt"
                         commands.append(command)
 
 os.makedirs("OUTPUT", exist_ok=True)
